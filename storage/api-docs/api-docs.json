@@ -1,0 +1,110 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "To do API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/todo'/lists": {
+            "get": {
+                "tags": [
+                    "To do List"
+                ],
+                "summary": "Get all todo lists.",
+                "description": "Search for cars for hire and for sale.",
+                "operationId": "v1TodoLists",
+                "responses": {
+                    "422": {
+                        "description": "The type is wrong",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "example": "422"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Unprocessable Entity"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "The type is wrong"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Research results",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "boolean",
+                                            "example": "false"
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "OK"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Research results"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "total": {
+                                                    "type": "integer",
+                                                    "example": "2"
+                                                },
+                                                "query": {
+                                                    "properties": {
+                                                        "price": {
+                                                            "type": "string",
+                                                            "example": "Research results"
+                                                        },
+                                                        "yes_out": {
+                                                            "type": "string",
+                                                            "example": "no"
+                                                        },
+                                                        "pickup-location": {
+                                                            "type": "string",
+                                                            "example": "Research results"
+                                                        },
+                                                        "with-driver": {
+                                                            "type": "string",
+                                                            "example": "Research results"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
