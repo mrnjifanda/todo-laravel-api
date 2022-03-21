@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('activity');
+            $table->string('date');
             $table->enum('status', ['processing', 'failed', 'completed'])->default('processing');
             $table->string('deleted_at')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

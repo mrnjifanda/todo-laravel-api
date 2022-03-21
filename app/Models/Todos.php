@@ -12,29 +12,30 @@ class Todos extends Model
         'user_id',
         'name',
         'slug',
+        'date',
         'activity',
         'status',
         'deleted_at'
     ];
     
-    protected $appends = ['user'];
+    // protected $appends = ['user'];
 
     public function user()
     {
 
-      return $this->belongsToMany(Users::class);
+      return $this->belongsToMany(User::class);
     }
 
-    public function getUserAttribute()
-    {
+    // public function getUserAttribute()
+    // {
 
-        $user = $this->user()->first();
-        if(!is_null($user)){
+    //     $user = $this->user()->first();
+    //     if(!is_null($user)){
 
-            $user = $user->only('id','name', 'email');
-        }
-        return $user;
-    }
+    //         $user = $user->only('id','name', 'email');
+    //     }
+    //     return $user;
+    // }
   
   
     
